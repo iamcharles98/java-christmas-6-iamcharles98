@@ -7,8 +7,9 @@ public class InputView {
     private final String RESERVATION_MENU_MESSAGE = "주문하실 메뉴를 메뉴와 개수를 알려 주세요. (e.g. 해산물 파스타-2,레드와인-1,초코케이크-1)";
 
     private static final InputView INSTANCE = new InputView();
+
     private InputView() {
-    };
+    }
 
     public static InputView getInstance() {
         return INSTANCE;
