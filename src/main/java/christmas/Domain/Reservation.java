@@ -22,6 +22,14 @@ public class Reservation {
         return day;
     }
 
+    public int getTotalPrice() {
+        int totalPrice = 0;
+        for (Menu menu : menus.keySet()) {
+            totalPrice += (menu.getPrice() * menus.get(menu));
+        }
+        return totalPrice;
+    }
+
     private void validateMenus(Map<Menu, Integer> menus) throws IllegalArgumentException {
         if (hasOnlyDrinks(menus)) {
             throw new IllegalArgumentException();
