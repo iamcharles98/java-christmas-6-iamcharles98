@@ -7,4 +7,6 @@ public class Constants {
     public static final int LAST_DATE = 31;
     public static final String LINE = "\n";
     public static final String SPACE = " ";
+    public static final String COLON = ":";
+    public static final String MINUS = "-";
 }
