@@ -1,5 +1,6 @@
-package christmas.Domain;
+package christmas.Domain.Event;
 
+import christmas.Domain.Reservation;
 import java.util.List;
 
 public class ChristmasEvent extends Event {

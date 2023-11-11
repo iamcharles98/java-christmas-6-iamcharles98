@@ -1,4 +1,6 @@
-package christmas.Domain;
+package christmas.Domain.Event;
+
+import christmas.Domain.Reservation;
 
 public abstract class Event {
     private final int EVENT_CONDITION = 10000;
