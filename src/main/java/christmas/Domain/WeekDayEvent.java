@@ -20,7 +20,9 @@ public class WeekDayEvent extends Event {
 
     @Override
     public void apply(Reservation reservation) {
-        int countOfDessertMenu = reservation.NumberOfDessertMenu();
-        int discountMoney = countOfDessertMenu * DISCOUNT_UNIT;
+        if (super.canMeetCondition(reservation.getTotalPrice())) {
+            int countOfDessertMenu = reservation.NumberOfDessertMenu();
+            int discountMoney = countOfDessertMenu * DISCOUNT_UNIT;
+        }
     }
 }
