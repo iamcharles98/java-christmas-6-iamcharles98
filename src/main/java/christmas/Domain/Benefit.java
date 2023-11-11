@@ -1,8 +1,11 @@
-package christmas.Domain.Event;
+package christmas.Domain;
 
 import static christmas.Constants.COLON;
 import static christmas.Constants.MINUS;
 import static christmas.Constants.SPACE;
+
+import christmas.Domain.Event.Event;
+import christmas.Domain.Event.GiftEvent;
 
 public class Benefit {
     private final Event event;

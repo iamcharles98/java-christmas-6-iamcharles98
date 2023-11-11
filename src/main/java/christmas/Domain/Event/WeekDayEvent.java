@@ -1,5 +1,6 @@
 package christmas.Domain.Event;
 
+import christmas.Domain.Benefit;
 import christmas.Domain.Reservation;
 import java.util.List;
 import java.util.Optional;
