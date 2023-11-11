@@ -3,6 +3,7 @@ package christmas.Domain.Event;
 import christmas.Domain.Menu;
 import christmas.Domain.Reservation;
 import java.util.List;
+import java.util.Optional;
 
 public class GiftEvent extends Event {
     private final Menu GIFT = Menu.CHAMPAGNE;
@@ -21,10 +22,11 @@ public class GiftEvent extends Event {
     }
 
     @Override
-    public void apply(Reservation reservation) {
+    public Optional<Benefit> apply(Reservation reservation) {
         if (super.canMeetCondition(reservation.getTotalPrice()) && canMeetGiftCondition(reservation.getTotalPrice())) {
-            int discountPrice = GIFT.getPrice();
+            return Optional.of(new Benefit(this, GIFT.getPrice()));
         }
+        return Optional.empty();
     }
 
     private boolean canMeetGiftCondition(int totalPrice) {

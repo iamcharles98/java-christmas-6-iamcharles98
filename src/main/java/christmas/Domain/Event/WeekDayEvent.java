@@ -2,6 +2,7 @@ package christmas.Domain.Event;
 
 import christmas.Domain.Reservation;
 import java.util.List;
+import java.util.Optional;
 
 public class WeekDayEvent extends Event {
     private final int DISCOUNT_UNIT = 2023;
@@ -20,10 +21,12 @@ public class WeekDayEvent extends Event {
     }
 
     @Override
-    public void apply(Reservation reservation) {
+    public Optional<Benefit> apply(Reservation reservation) {
         if (super.canMeetCondition(reservation.getTotalPrice())) {
             int countOfDessertMenu = reservation.NumberOfDessertMenu();
             int discountMoney = countOfDessertMenu * DISCOUNT_UNIT;
+            return Optional.of(new Benefit(this, discountMoney));
         }
+        return Optional.empty();
     }
 }

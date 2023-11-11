@@ -2,6 +2,7 @@ package christmas.Domain.Event;
 
 import christmas.Domain.Reservation;
 import java.util.List;
+import java.util.Optional;
 
 public class ChristmasEvent extends Event {
     private final int DISCOUNT_BASE_UNIT = 1000;
@@ -20,10 +21,12 @@ public class ChristmasEvent extends Event {
     }
 
     @Override
-    public void apply(Reservation reservation) {
+    public Optional<Benefit> apply(Reservation reservation) {
         if (super.canMeetCondition(reservation.getTotalPrice())) {
             int discountMoney = getDiscountMoney(reservation.getDay());
+            return Optional.of(new Benefit(this, discountMoney));
         }
+        return Optional.empty();
     }
 
     private int getDiscountMoney(int reservationDay) {
