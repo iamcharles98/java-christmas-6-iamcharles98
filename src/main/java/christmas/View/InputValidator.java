@@ -14,7 +14,7 @@ import java.util.Arrays;
 
 public class InputValidator {
     private final String NUMBER_REGEX = "^[0-9]+$";
-    private final String KOREAN_REGEX = "^[ㄱ-ㅎ가-힣]+$";
+    private final String KOREAN_REGEX = "^[ㄱ-ㅎ 가-힣]+$";
     private final String PARTIALLY_NUMBER = "[0-9]";
 
     private static final InputValidator INSTANCE = new InputValidator();
