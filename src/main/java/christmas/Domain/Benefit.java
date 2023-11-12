@@ -1,6 +1,7 @@
 package christmas.Domain;
 
 import static christmas.Utils.Constants.COLON;
+import static christmas.Utils.Constants.LINE;
 import static christmas.Utils.Constants.MINUS;
 import static christmas.Utils.Constants.SPACE;
 
@@ -28,7 +29,8 @@ public class Benefit {
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(event.name()).append(COLON).append(SPACE).append(MINUS)
-                .append(String.format("%,d원", discountMoney));
+                .append(String.format("%,d원", discountMoney))
+                .append(LINE);
         return stringBuilder.toString();
     }
 }
