@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class GiftEvent extends Event {
+    private final String eventName = "증정 이벤트";
     private final Menu GIFT = Menu.CHAMPAGNE;
     private final int GIFT_CONDITION = 120000;
     private final List<Integer> eventDay = List.of(
@@ -28,6 +29,11 @@ public class GiftEvent extends Event {
             return Optional.of(new Benefit(this, GIFT.getPrice()));
         }
         return Optional.empty();
+    }
+
+    @Override
+    public String name() {
+        return eventName;
     }
 
     private boolean canMeetGiftCondition(int totalPrice) {

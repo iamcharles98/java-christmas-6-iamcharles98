@@ -12,4 +12,5 @@ public abstract class Event {
     public abstract boolean isEventDay(int day);
 
     public abstract Optional<Benefit> apply(Reservation reservation);
+    public abstract String name();
 }

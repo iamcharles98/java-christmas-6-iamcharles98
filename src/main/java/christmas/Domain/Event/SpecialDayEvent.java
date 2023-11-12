@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class SpecialDayEvent extends Event {
+    private final String eventName = "특별 할인";
     private final int DISCOUNT_UNIT = 1000;
     private final List<Integer> eventDay = List.of(
             3,
@@ -25,5 +26,10 @@ public class SpecialDayEvent extends Event {
             return Optional.of(new Benefit(this, DISCOUNT_UNIT));
         }
         return Optional.empty();
+    }
+
+    @Override
+    public String name() {
+        return eventName;
     }
 }

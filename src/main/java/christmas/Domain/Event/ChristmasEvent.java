@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class ChristmasEvent extends Event {
+    private final String eventName = "크리스마스 디데이 할인";
     private final int DISCOUNT_BASE_UNIT = 1000;
     private final int DISCOUNT_ADD_UNIT = 100;
     private final int ADJUST_NUMBER = 1;
@@ -28,6 +29,11 @@ public class ChristmasEvent extends Event {
             return Optional.of(new Benefit(this, discountMoney));
         }
         return Optional.empty();
+    }
+
+    @Override
+    public String name() {
+        return eventName;
     }
 
     private int getDiscountMoney(int reservationDay) {

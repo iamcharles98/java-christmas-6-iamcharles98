@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class WeekendDayEvent extends Event {
+    private final String eventName = "주말 할인";
     private final int DISCOUNT_UNIT = 2023;
     private final List<Integer> eventDay = List.of(
             1, 2,
@@ -30,5 +31,10 @@ public class WeekendDayEvent extends Event {
             return Optional.of(new Benefit(this, discountMoney));
         }
         return Optional.empty();
+    }
+
+    @Override
+    public String name() {
+        return eventName;
     }
 }
