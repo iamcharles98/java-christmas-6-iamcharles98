@@ -1,8 +1,8 @@
-package christmas;
+package christmas.Utils;
 
-import static christmas.Constants.AMOUNT_INDEX;
-import static christmas.Constants.NAME_AND_AMOUNT_DELIMITER;
-import static christmas.Constants.NAME_INDEX;
+import static christmas.Utils.Constants.AMOUNT_INDEX;
+import static christmas.Utils.Constants.NAME_AND_AMOUNT_DELIMITER;
+import static christmas.Utils.Constants.NAME_INDEX;
 
 import christmas.Domain.Menu;
 import java.util.HashMap;

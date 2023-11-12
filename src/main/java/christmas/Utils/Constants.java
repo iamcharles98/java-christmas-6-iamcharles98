@@ -1,4 +1,4 @@
-package christmas;
+package christmas.Utils;
 
 public class Constants {
     public static final int MIN_AMOUNT = 1;
