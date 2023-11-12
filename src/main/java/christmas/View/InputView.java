@@ -21,6 +21,7 @@ public class InputView {
     public void showGreetingMessage() {
         System.out.println(GREETING_MESSAGE);
     }
+
     public int receiveReservationDate() {
         System.out.println(RESERVATION_DATE_MESSAGE);
         String input = Console.readLine();
