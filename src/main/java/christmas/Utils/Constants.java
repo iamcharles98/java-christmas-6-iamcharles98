@@ -11,6 +11,7 @@ public class Constants {
     public static final int AMOUNT_INDEX = 1;
     public static final String LINE = "\n";
     public static final String SPACE = " ";
+    public static final String EMPTY = "";
     public static final String COLON = ":";
     public static final String MINUS = "-";
 }

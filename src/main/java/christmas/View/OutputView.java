@@ -101,7 +101,7 @@ public class OutputView {
     private void showExpectPrice(int expectPrice) {
         StringBuilder stringBuilder = new StringBuilder();
         stringBuilder.append(DISCOUNT_ORDER_PRICE_MESSAGE).append(LINE)
-                .append(String.format(PRICE_FORMAT, expectPrice));
+                .append(String.format(PRICE_FORMAT, expectPrice)).append(LINE);
         System.out.println(stringBuilder.toString());
     }
 
