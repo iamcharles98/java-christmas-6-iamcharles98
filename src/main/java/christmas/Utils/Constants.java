@@ -1,6 +1,7 @@
 package christmas.Utils;
 
 public class Constants {
+    public static final int ZERO = 0;
     public static final int MIN_AMOUNT = 1;
     public static final int MAX_AMOUNT = 20;
     public static final int FIRST_DATE = 1;

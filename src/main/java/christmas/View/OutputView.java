@@ -3,6 +3,7 @@ package christmas.View;
 import static christmas.Utils.Constants.LINE;
 import static christmas.Utils.Constants.MINUS;
 import static christmas.Utils.Constants.SPACE;
+import static christmas.Utils.Constants.ZERO;
 
 import christmas.Domain.Badge;
 import christmas.Domain.Benefit;
@@ -93,6 +94,12 @@ public class OutputView {
 
     private void showTotalDiscountMoney(int discountMoney) {
         StringBuilder stringBuilder = new StringBuilder();
+        if (discountMoney == ZERO) {
+            stringBuilder.append(TOTAL_DISCOUNT_MESSAGE).append(LINE)
+                    .append(String.format(PRICE_FORMAT, discountMoney)).append(LINE);
+            System.out.println(stringBuilder.toString());
+            return;
+        }
         stringBuilder.append(TOTAL_DISCOUNT_MESSAGE).append(LINE)
                 .append(MINUS).append(String.format(PRICE_FORMAT, discountMoney)).append(LINE);
         System.out.println(stringBuilder.toString());
