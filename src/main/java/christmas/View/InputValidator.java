@@ -1,9 +1,13 @@
 package christmas.View;
 
+import static christmas.Constants.AMOUNT_INDEX;
 import static christmas.Constants.FIRST_DATE;
 import static christmas.Constants.LAST_DATE;
 import static christmas.Constants.MAX_AMOUNT;
 import static christmas.Constants.MIN_AMOUNT;
+import static christmas.Constants.NAME_AND_AMOUNT_DELIMITER;
+import static christmas.Constants.NAME_INDEX;
+import static christmas.Constants.ORDER_DELIMITER;
 
 import java.util.Arrays;
 
@@ -11,10 +15,6 @@ public class InputValidator {
     private final String NUMBER_REGEX = "^[0-9]+$";
     private final String KOREAN_REGEX = "^[ㄱ-ㅎ가-힣]+$";
     private final String PARTIALLY_NUMBER = "[0-9]";
-    private final String ORDER_DELIMITER = ",";
-    private final String NAME_AND_AMOUNT_DELIMITER = "-";
-    private final int NAME_INDEX = 0;
-    private final int AMOUNT_INDEX = 1;
 
     private static final InputValidator INSTANCE = new InputValidator();
 
