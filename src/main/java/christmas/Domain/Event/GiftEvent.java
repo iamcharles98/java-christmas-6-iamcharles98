@@ -25,7 +25,7 @@ public class GiftEvent extends Event {
 
     @Override
     public Optional<Benefit> apply(Reservation reservation) {
-        if (super.canMeetCondition(reservation.getTotalPrice()) && canMeetGiftCondition(reservation.getTotalPrice())) {
+        if (this.canMeetCondition(reservation.getTotalPrice()) && isEventDay(reservation.getDay())) {
             return Optional.of(new Benefit(this, GIFT.getPrice()));
         }
         return Optional.empty();
@@ -36,7 +36,9 @@ public class GiftEvent extends Event {
         return eventName;
     }
 
-    private boolean canMeetGiftCondition(int totalPrice) {
+    @Override
+    public boolean canMeetCondition(int totalPrice) {
         return totalPrice >= GIFT_CONDITION;
     }
+
 }

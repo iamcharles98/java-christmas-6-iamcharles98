@@ -24,7 +24,7 @@ public class ChristmasEvent extends Event {
 
     @Override
     public Optional<Benefit> apply(Reservation reservation) {
-        if (super.canMeetCondition(reservation.getTotalPrice())) {
+        if (super.canMeetCondition(reservation.getTotalPrice()) && isEventDay(reservation.getDay())) {
             int discountMoney = getDiscountMoney(reservation.getDay());
             return Optional.of(new Benefit(this, discountMoney));
         }

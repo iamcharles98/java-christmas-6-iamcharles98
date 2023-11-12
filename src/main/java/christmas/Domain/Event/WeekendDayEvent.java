@@ -25,7 +25,7 @@ public class WeekendDayEvent extends Event {
 
     @Override
     public Optional<Benefit> apply(Reservation reservation) {
-        if (super.canMeetCondition(reservation.getTotalPrice())) {
+        if (super.canMeetCondition(reservation.getTotalPrice()) && isEventDay(reservation.getDay())) {
             int countOfMainMenu = reservation.NumberOfMainMenu();
             int discountMoney = countOfMainMenu * DISCOUNT_UNIT;
             return Optional.of(new Benefit(this, discountMoney));

@@ -22,7 +22,7 @@ public class SpecialDayEvent extends Event {
 
     @Override
     public Optional<Benefit> apply(Reservation reservation) {
-        if (super.canMeetCondition(reservation.getTotalPrice())) {
+        if (super.canMeetCondition(reservation.getTotalPrice()) && isEventDay(reservation.getDay())) {
             return Optional.of(new Benefit(this, DISCOUNT_UNIT));
         }
         return Optional.empty();
