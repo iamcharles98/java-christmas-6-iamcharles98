@@ -52,10 +52,10 @@ public class Reservation {
 
     private void validateMenus(Map<Menu, Integer> menus) throws IllegalArgumentException {
         if (hasOnlyDrinks(menus)) {
-            throw new IllegalArgumentException(ErrorMessage.INVALID_ORDER.getMessage());
+            throw new IllegalArgumentException(ErrorMessage.ONLY_DRINK_ORDER.getMessage());
         }
         if (isOverOrder(menus)) {
-            throw new IllegalArgumentException(ErrorMessage.INVALID_ORDER.getMessage());
+            throw new IllegalArgumentException(ErrorMessage.OVER_ORDER.getMessage());
         }
     }
 
