@@ -14,6 +14,10 @@ public class CheckOut {
         choiceBadge();
     }
 
+    public Reservation getReservation() {
+        return reservation;
+    }
+
     public int getAmountOfBenefit() {
         int benefitAmount = 0;
         for (Benefit benefit : benefits) {
