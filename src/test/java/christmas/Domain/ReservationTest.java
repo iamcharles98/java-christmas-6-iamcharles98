@@ -58,7 +58,7 @@ class ReservationTest {
         Reservation reservation = new Reservation(order, date);
 
         //then
-        Assertions.assertThat(reservation.NumberOfMainMenu()).isEqualTo(10);
+        Assertions.assertThat(reservation.NumberOfMenuTypeOf(MenuType.MAIN)).isEqualTo(10);
     }
 
     @DisplayName("디저트 메뉴의 갯수를 반환한다.")
@@ -75,7 +75,7 @@ class ReservationTest {
         Reservation reservation = new Reservation(order, date);
 
         //then
-        Assertions.assertThat(reservation.NumberOfDessertMenu()).isEqualTo(10);
+        Assertions.assertThat(reservation.NumberOfMenuTypeOf(MenuType.DESSERT)).isEqualTo(10);
     }
 
     @DisplayName("주문 메뉴의 총 가격을 반환한다.")

@@ -22,20 +22,10 @@ public class Reservation {
         return day;
     }
 
-    public int NumberOfDessertMenu() {
+    public int NumberOfMenuTypeOf(MenuType type) {
         int count = 0;
         for (Menu menu : menus.keySet()) {
-            if (menu.getType().equals(MenuType.DESSERT)) {
-                count += menus.get(menu);
-            }
-        }
-        return count;
-    }
-
-    public int NumberOfMainMenu() {
-        int count = 0;
-        for (Menu menu : menus.keySet()) {
-            if (menu.getType().equals(MenuType.MAIN)) {
+            if (menu.getType().equals(type)) {
                 count += menus.get(menu);
             }
         }
