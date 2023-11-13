@@ -77,7 +77,7 @@ public class InputValidator {
     }
 
     private boolean isInBoundary(int amount) {
-        return amount >= MIN_AMOUNT && amount <= MAX_AMOUNT;
+        return amount >= MIN_AMOUNT && amount <= Integer.MAX_VALUE;
     }
 
     private boolean isKorean(String input) {
