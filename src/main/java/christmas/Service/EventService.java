@@ -31,18 +31,12 @@ public class EventService {
     public List<Benefit> getBenefitsOfApplicableEvent(Reservation reservation) {
         final List<Benefit> benefits = new ArrayList<>();
         for (Event event : events) {
-            addBenefitIfApplicable(reservation, benefits, event);
-        }
-        return benefits;
-    }
-
-    private void addBenefitIfApplicable(Reservation reservation, List<Benefit> benefits, Event event) {
-        if (event.isEventDay(reservation.getDay())) {
             Optional<Benefit> optionalBenefit = event.apply(reservation);
             if (optionalBenefit.isPresent()) {
                 benefits.add(optionalBenefit.get());
             }
         }
+        return benefits;
     }
 
 }
