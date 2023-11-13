@@ -26,6 +26,9 @@ public class Benefit {
         return event instanceof GiftEvent;
     }
 
+    public String createdBy() {
+        return event.name();
+    }
     @Override
     public String toString() {
         StringBuilder stringBuilder = new StringBuilder();
