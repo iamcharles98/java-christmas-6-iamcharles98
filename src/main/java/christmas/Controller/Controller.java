@@ -33,7 +33,7 @@ public class Controller {
 
     public void makeReservationProcess() {
         int visitDate = receiveVisitDate();
-        Reservation reservation = makeReservation(visitDate);
+        makeReservation(visitDate);
         outputView.showPreviewMessage(visitDate);
     }
 
@@ -53,14 +53,14 @@ public class Controller {
         return date;
     }
 
-    private Reservation makeReservation(int date) {
+    private void makeReservation(int date) {
         try {
             String[] reservationMenu = inputView.receiveReservationMenu();
             Map<Menu, Integer> orders = InputResolver.stringToOrderMap(reservationMenu);
-            return promotionService.createReservation(orders, date);
+            promotionService.createReservation(orders, date);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
-            return makeReservation(date);
+            makeReservation(date);
         }
     }
 }

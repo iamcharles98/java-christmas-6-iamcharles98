@@ -20,9 +20,8 @@ public class PromotionService {
         return INSTANCE;
     }
 
-    public Reservation createReservation(Map<Menu, Integer> menus, int day) {
+    public void createReservation(Map<Menu, Integer> menus, int day) {
         reservation = new Reservation(menus, day);
-        return reservation;
     }
 
     public CheckOut createCheckOut() {
