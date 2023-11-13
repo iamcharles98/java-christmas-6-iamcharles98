@@ -94,14 +94,11 @@ public class OutputView {
 
     private void showTotalDiscountMoney(int discountMoney) {
         StringBuilder stringBuilder = new StringBuilder();
-        if (discountMoney == ZERO) {
-            stringBuilder.append(TOTAL_DISCOUNT_MESSAGE).append(LINE)
-                    .append(String.format(PRICE_FORMAT, discountMoney)).append(LINE);
-            System.out.println(stringBuilder.toString());
-            return;
+        stringBuilder.append(TOTAL_DISCOUNT_MESSAGE).append(LINE);
+        if (discountMoney != ZERO) {
+            stringBuilder.append(MINUS);
         }
-        stringBuilder.append(TOTAL_DISCOUNT_MESSAGE).append(LINE)
-                .append(MINUS).append(String.format(PRICE_FORMAT, discountMoney)).append(LINE);
+        stringBuilder.append(String.format(PRICE_FORMAT, discountMoney)).append(LINE);
         System.out.println(stringBuilder.toString());
     }
 
