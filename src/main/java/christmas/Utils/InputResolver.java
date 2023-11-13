@@ -29,7 +29,7 @@ public class InputResolver {
         String[] order = token.split(NAME_AND_AMOUNT_DELIMITER);
         Optional<Menu> optionalMenu = Menu.getMenuByNameIfPresent(order[NAME_INDEX].replaceAll(SPACE, EMPTY));
         if (optionalMenu.isEmpty()) {
-            throw new IllegalArgumentException();
+            throw new IllegalArgumentException(ErrorMessage.INVALID_ORDER.getMessage());
         }
         orders.put(optionalMenu.get(), Integer.parseInt(order[AMOUNT_INDEX]));
     }
